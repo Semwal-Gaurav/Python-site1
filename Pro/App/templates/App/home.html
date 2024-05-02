@@ -1,0 +1,119 @@
+{% extends "App/nav.html" %}
+  {% block content %}
+  {%load static %}
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python| home page</title>
+
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .dark-mode .nav-link {
+            color: #c0abab;
+        }
+
+        .dark-mode .dropdown-menu {
+            background-color: #000000;
+        }
+
+        .dark-mode .dropdown-item {
+            color: #f3ecec;
+        }
+
+        .dark-mode .dropdown-item:hover {
+            background-color: #555;
+        }
+
+        .dark-mode .text-bg-light {
+            background-color: #444 !important;
+        }
+
+        .dark-mode .link-secondary {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+
+    <main id="main">
+        <div class="container py-5 py-lg-6">
+            <div class="col-lg-10 col-xxl-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="display-3">Learn Python</h1>
+                        <p class="lead">Explore the world of Python programming with our comprehensive tutorial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Python -->
+        <div class="container mb-4">
+            <div class="row justify-content-lg-between align-items-center gy-4 pb-5 pb-lg-6">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="fw-normal">What is Python?</h2>
+                            <p class="fw-light">Python is a high-level, general-purpose programming language that was first released in 1991. It was designed by Guido van Rossum, with a focus on code readability and simplicity. Python is an interpreted language, meaning that it is executed line by line, rather than being compiled into machine code like C or C++.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="fw-normal">Why Learn Python?</h2>
+                            <p class="fw-light">Python has become one of the most popular programming languages in recent years due to its versatility and ease of use. It is widely used in various domains, including web development, data analysis, machine learning, automation, and scientific computing. Python's simplicity and readability make it an excellent choice for beginners, while its powerful libraries and frameworks make it suitable for complex and large-scale projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topics -->
+        <div class="container mb-4">
+            <div class="row justify-content-lg-between align-items-center gy-4 pb-5 pb-lg-6">
+                <div class="col-lg-6">
+                    <a class='d-inline-block' href='/intro.html'>
+                        <img src="{% static 'image/OIP.jpeg' %}" alt="Introduction to Python" class="img-thumbnail" width="800" height="550">
+                    </a>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="fw-normal">Introduction to Python</h2>
+                            <p class="fw-light">Get started with Python by learning about its history, features, and installation process.</p>
+                            <a class='link-underline' href='/intro.html'>View Topic</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add other topic sections similar to the above -->
+        </div>
+
+        <!-- Call to action -->
+        <div class="text-bg-primary text-center">
+            <div class="container py-5 py-lg-6">
+                <div class="card bg-transparent border-0">
+                    <div class="card-body">
+                        <h2>Ready to dive into Python?</h2>
+                        <p class="lead mb-4">Start your journey with our comprehensive Python tutorial today.</p>
+                        <a class='btn btn-outline-dark' href='/intro.html'>Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+ 
+<!--  -->
+</body>
+</html>
+  {% endblock %}
