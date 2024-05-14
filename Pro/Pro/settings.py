@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phonenumber_field',
+    'otp',
+    'otp_twilio',
     'App',
+    'channels',
    
 ]
 
@@ -75,7 +79,7 @@ WSGI_APPLICATION = 'Pro.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES =DATABASES = {
+DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "Python",
@@ -122,6 +126,7 @@ USE_TZ = True
 
 #...
 STATIC_URL = '/static/'
+
 #...
 
 # Default primary key field type
@@ -129,3 +134,9 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+OTP_TOTP_ISSUER = 'MyApp'
+OTP_TOTP_TIMEOUT = 30
+
+TWILIO_ACCOUNT_SID = 'AC0e648a16db3c8a43d5875da81132a30a'
+TWILIO_AUTH_TOKEN = 'abe055b7eb839fb2ca41278611eb7b50'
+OTP_TWILIO_FROM_NUMBER = '09781855165'

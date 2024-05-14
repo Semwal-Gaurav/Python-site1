@@ -16,13 +16,15 @@ Including another URLconf
 """
 from . import views
 from django.urls import path
+from . import consumers
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('intro/', views.intro, name='intro'),
+    path('signup/', views.signup, name='signup'),
     path('login/', views.user_login, name='login'),
-   
-    path('signup/', views.register, name='signup'),
+    path('logout/', views.user_logout, name='logout'),
+    path('profile/', views.profile, name='profile'),
     path('syntax/', views.syntax, name='syntax'),
     path('datatypes/', views.datatypes, name='datatypes'),
     path('controlflow/', views.controlflow, name='controlflow'),
@@ -30,7 +32,9 @@ urlpatterns = [
     path('modules/', views.modules, name='modules'),
     path('loop/', views.loop, name='loop'),
     path('filehandling/', views.filehandling, name='filehandling'),
-    path('logout/', views.user_logout, name='logout'),  # You need to define this view
-    path('profile/', views.profile, name='profile'),
     path('change_path/<str:new_path>/', views.change_path, name='change_path'),
+]
+
+websocket_urlpatterns = [
+    path('ws/App/', consumers.ChatConsumer.as_asgi()),
 ]
