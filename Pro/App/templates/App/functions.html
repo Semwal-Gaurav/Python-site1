@@ -1,0 +1,247 @@
+{% extends 'App/nav.html' %}
+{% block content %}
+
+<h1>Python <span class="color_h1">Functions</span></h1>
+<hr>
+<p class="intro">A function is a block of code which only runs when it is called.</p>
+<p class="intro">You can pass data, known as parameters, into a function.</p>
+<p class="intro">A function can return data as a result.</p>
+<hr>
+<h2>Creating a Function</h2>
+<p>In Python a function is defined using the <span class="w3-codespan">def</span> 
+    keyword:</p>
+    
+    <div class="w3-example">
+        <h3>Example<a class="ws-black ws-hover-black spaces-tryit ga-featured" href="/python/python_server.asp" title="W3Schools Spaces" target="_blank">Get your own Python Server</a></h3>
+        <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+        </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function():<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(<span class="pythonstringcolor" style="color:brown">"Hello from a function"</span>) </span></div>
+        </div>
+        <hr>
+        <h2>Calling a Function</h2>
+        <p>To call a function, use the function name followed by parenthesis:</p>
+        <div class="w3-example">
+            <h3>Example</h3>
+            <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+            </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function():<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(<span class="pythonstringcolor" style="color:brown">"Hello from a function"</span>)<br><br><span class="pythonnumbercolor" style="color:red">
+            </span>  <strong>my_function()</strong> </span></div>
+            <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function">Try it Yourself »</a>
+            </div>
+            <hr>
+            <h2>Arguments</h2>
+            <p>Information can be passed into functions as arguments.</p>
+            <p>Arguments are specified after the function name, inside the parentheses.
+                You can add as many arguments as you want, just separate them with a comma.</p>
+                <p>
+                    The following example has a function with one argument (fname).
+                    When the function is called, we pass along a first name,
+                    which is used inside the function to print the full name:
+                    </p>
+                    <div class="w3-example">
+                        <h3>Example</h3>
+                        <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                        </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(<strong>fname</strong>):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(fname + <span class="pythonstringcolor" style="color:brown">" Refsnes"</span>)<br><br><span class="pythonnumbercolor" style="color:red">
+                        </span>  my_function(<strong><span class="pythonstringcolor" style="color:brown">"Emil"</span></strong>)<br>my_function(<strong><span class="pythonstringcolor" style="color:brown">"Tobias"</span></strong>)<br>my_function(<strong><span class="pythonstringcolor" style="color:brown">"Linus"</span></strong>) </span></div>
+                        <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_param">Try it Yourself »</a>
+                        </div>
+                        <div class="w3-panel w3-note">
+                            <p><em>Arguments</em> are often shortened to <em>args</em> in Python documentations.</p>
+                          </div>
+                          <hr>
+                          <h2>Parameters or Arguments?</h2>
+                          <p>The terms <em>parameter</em> and <em>argument</em> can be used for the same thing: information that are passed into a function.</p>
+                          <div class="w3-panel w3-note">
+                            <p>From a function's perspective:</p>
+                            <p>A parameter is the variable listed inside the parentheses in the function definition.</p>
+                            <p>An argument is the value that is sent to the function when it is called.</p>
+                          </div>
+                          <hr>
+                          <h2>Number of Arguments</h2>
+                          <p>By default, a function must be called with the correct number of arguments. 
+                            Meaning that if your function expects 2 arguments, you have to call the function 
+                            with 2 arguments, not more, and not less. </p>
+                            <div class="w3-example">
+                                <h3>Example</h3>
+                                  <p>This function expects 2 arguments, and gets 2 arguments:</p>
+                                <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(fname, lname):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(fname + <span class="pythonstringcolor" style="color:brown">" "</span> + lname)<br><br><span class="pythonnumbercolor" style="color:red">
+                                </span>  my_function(<span class="pythonstringcolor" style="color:brown">"Emil"</span>, <span class="pythonstringcolor" style="color:brown">"Refsnes"</span>) </span></div>
+                                <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_args_n">Try it Yourself »</a>
+                                </div>
+
+
+If you try to call the function with 1 or 3 arguments, you will get an error:
+
+<div class="w3-example w3-pale-red">
+    <h3>Example</h3>
+      <p>This function expects 2 arguments, but gets only 1:</p>
+    <div class="w3-code notranslate pythonHigh w3-border-red"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+    </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(fname, lname):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(fname + <span class="pythonstringcolor" style="color:brown">" "</span> + lname)<br><br><span class="pythonnumbercolor" style="color:red">
+    </span>  my_function(<span class="pythonstringcolor" style="color:brown">"Emil"</span>) </span></div>
+    <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_args_error">Try it Yourself »</a>
+    </div>
+    <hr>
+    <h2>Arbitrary Arguments, *args</h2>
+    <p>If you do not know how many arguments that will be passed into your function,
+        add a <code class="w3-codespan">*</code> before the parameter name in the function definition.</p>
+        <p>This way the function will receive a <em>tuple</em> of arguments, and can access the items accordingly:</p>
+        <div class="w3-example">
+            <h3>Example</h3>
+              <p>If the number of arguments is unknown, add a <code class="w3-codespan">*</code> before the parameter name:</p>
+            <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+            </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(*kids):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(<span class="pythonstringcolor" style="color:brown">"The youngest child 
+              is "</span> + kids[<span class="pythonnumbercolor" style="color:red">2</span>])<br><br><span class="pythonnumbercolor" style="color:red">
+            </span>  my_function(<span class="pythonstringcolor" style="color:brown">"Emil"</span>, <span class="pythonstringcolor" style="color:brown">"Tobias"</span>, <span class="pythonstringcolor" style="color:brown">"Linus"</span>) </span></div>
+            <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_args">Try it Yourself »</a>
+            </div>
+            <div class="w3-panel w3-note">
+                <p><em>Arbitrary Arguments</em> are often shortened to <em>*args</em> in Python documentations.</p>
+              </div>
+              <hr>
+              <h2>Keyword Arguments</h2>
+              <p>You can also send arguments with the <em>key</em> = <em>value</em> syntax.</p>
+              <p>This way the order of the arguments does not matter.</p>
+              <div class="w3-example">
+                <h3>Example</h3>
+                <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(child3, child2, child1):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(<span class="pythonstringcolor" style="color:brown">"The youngest child 
+                  is "</span> + child3)<br><br><span class="pythonnumbercolor" style="color:red">
+                </span>  my_function(child1 = <span class="pythonstringcolor" style="color:brown">"Emil"</span>, child2 = <span class="pythonstringcolor" style="color:brown">"Tobias"</span>, child3 = <span class="pythonstringcolor" style="color:brown">"Linus"</span>) </span></div>
+                <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_kwargs">Try it Yourself »</a>
+                </div>
+                <div class="w3-panel w3-note">
+                    <p>The phrase <em>Keyword Arguments</em> are often shortened to <em>kwargs</em> in Python documentations.</p>
+                  </div>
+                  <hr>
+                  <h2>Arbitrary Keyword Arguments, **kwargs</h2>
+                  <p>If you do not know how many keyword arguments that will be passed into your function,
+                    add two asterisk: <code class="w3-codespan">**</code> before the parameter name in the function definition.</p>
+                    <p>This way the function will receive a <em>dictionary</em> of arguments, and can access the items accordingly:</p>
+                    <div class="w3-example">
+                        <h3>Example</h3>
+                          <p>If the number of keyword arguments is unknown, add a double
+                          <code class="w3-codespan">**</code> before the parameter name:</p>
+                        <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                        </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(**kid):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(<span class="pythonstringcolor" style="color:brown">"His last name is "</span> + kid[<span class="pythonstringcolor" style="color:brown">"lname"</span>])<br><span class="pythonnumbercolor" style="color:red">
+                        </span>  <br>my_function(fname = <span class="pythonstringcolor" style="color:brown">"Tobias"</span>, lname = <span class="pythonstringcolor" style="color:brown">"Refsnes"</span>) </span></div>
+                        <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_kwargs_n">Try it Yourself »</a>
+                        </div>
+                        <div class="w3-panel w3-note">
+                            <p><em>Arbitrary Kword Arguments</em> are often shortened to <em>**kwargs</em> in Python documentations.</p>
+                          </div>
+                          <hr>
+                          <h2>Default Parameter Value</h2>
+                          <p>The following example shows how to use a default parameter value.</p>
+                          <p>If we call the function without argument, it uses the default value:</p>
+                          <div class="w3-example">
+                            <h3>Example</h3>
+                            <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                            </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(<strong>country = <span class="pythonstringcolor" style="color:brown">"Norway"</span></strong>):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(<span class="pythonstringcolor" style="color:brown">"I am from "</span> + <span class="pythonnumbercolor" style="color:red">
+                            </span>  country)<br><br><span class="pythonnumbercolor" style="color:red">
+                            </span>  my_function(<span class="pythonstringcolor" style="color:brown">"Sweden"</span>)<br>my_function(<span class="pythonstringcolor" style="color:brown">"India"</span>)<br>my_function()<br>my_function(<span class="pythonstringcolor" style="color:brown">"Brazil"</span>) </span></div>
+                            <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_param2">Try it Yourself »</a>
+                            </div>
+                            <hr>
+                            <h2>Passing a List as an Argument</h2>
+                            <p>You can send any data types of argument to a function (string, number, list, dictionary etc.), 
+                                and it will
+                                be treated as the same data type inside the function.</p>
+                                <p>E.g. if you send a List as an argument, it will still be a List when it 
+                                    reaches the function:</p>
+                                    <div class="w3-example">
+                                        <h3>Example</h3>
+                                        <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                        </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(food):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">for</span> x <span class="pythonkeywordcolor" style="color:mediumblue">in</span> food:<br>&nbsp;&nbsp;&nbsp; <span class="pythonnumbercolor" style="color:red">
+                                        </span>  <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(x)<br><br>fruits = [<span class="pythonstringcolor" style="color:brown">"apple"</span>, <span class="pythonstringcolor" style="color:brown">"banana"</span>, <span class="pythonstringcolor" style="color:brown">"cherry"</span>]<br><br><span class="pythonnumbercolor" style="color:red">
+                                        </span>  my_function(fruits)<br> </span></div>
+                                        <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_param3">Try it Yourself »</a>
+                                        </div>
+                                        <hr>
+                                        <h2>Return Values</h2>
+                                        <p>To let a function return a value, use the <code class="w3-codespan">return</code> 
+                                            statement:</p>
+                                            <p>To let a function return a value, use the <code class="w3-codespan">return</code> 
+                                                statement:</p><div class="w3-example">
+                                                    <h3>Example</h3>
+                                                    <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                                    </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(x):<br>&nbsp; <strong><span class="pythonkeywordcolor" style="color:mediumblue">return</span> <span class="pythonnumbercolor" style="color:red">5</span> * x<br></strong><br><span class="pythonkeywordcolor" style="color:mediumblue">print</span>(my_function(<span class="pythonnumbercolor" style="color:red">3</span>))<br><span class="pythonkeywordcolor" style="color:mediumblue">print</span>(my_function(<span class="pythonnumbercolor" style="color:red">5</span>))<br><span class="pythonnumbercolor" style="color:red">
+                                                    </span>  <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(my_function(<span class="pythonnumbercolor" style="color:red">9</span>)) </span></div>
+                                                    <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_return">Try it Yourself »</a>
+                                                    </div>
+                                                    <hr>
+                                                    
+                                                    <h2>The pass Statement</h2>
+                                                    <p><code class="w3-codespan">function</code> definitions cannot be empty, but if 
+                                                        you for some reason have a <code class="w3-codespan">function</code> definition with no content, put in the <code class="w3-codespan">pass</code> statement to avoid getting an error.</p>
+                                                        <div class="w3-example">
+                                                            <h3>Example</h3>
+                                                            <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                                            </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> myfunction():<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">pass</span> </span></div>
+                                                            <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_pass">Try it Yourself »</a>
+                                                            </div>
+                                                            <hr>
+                                                            <h2>Positional-Only Arguments</h2>
+                                                            <p>You can specify that a function can have ONLY positional arguments, or ONLY keyword arguments.</p>
+                                                            <p>To specify that a function can have only positional arguments, add <code class="w3-codespan">, /</code>
+                                                                after the arguments:</p>
+                                                                <div class="w3-example">
+                                                                    <h3>Example</h3>
+                                                                    <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                                                    </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(x, /):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(x)<br><br>my_function(<span class="pythonnumbercolor" style="color:red">3</span>) </span></div>
+                                                                    <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_pos_only">Try it Yourself »</a>
+                                                                    </div>
+                                                                    <p>Without the <code class="w3-codespan">, /</code> you are actually allowed to use keyword arguments even if the function
+                                                                        expects positional arguments:</p>
+                                                                        <div class="w3-example">
+                                                                            <h3>Example</h3>
+                                                                            <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                                                            </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(x):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(x)<br><br>my_function(x = <span class="pythonnumbercolor" style="color:red">3</span>) </span></div>
+                                                                            <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_pos_only2">Try it Yourself »</a>
+                                                                            </div>
+                                                                            <p>But when adding the <code class="w3-codespan">, /</code> you will get an error if you try to send a 
+                                                                                keyword argument:</p>
+                                                                                <div class="w3-example w3-pale-red">
+                                                                                    <h3>Example</h3>
+                                                                                    <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                                                                    </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(x, /):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(x)<br><br>my_function(x = <span class="pythonnumbercolor" style="color:red">3</span>) </span></div>
+                                                                                    <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_pos_only3">Try it Yourself »</a>
+                                                                                    </div>
+                                                                                    <hr>
+                                                                                    <h2>Keyword-only arguments</h2>
+                                                                                    <p>To specify that a function can have only keyword arguments, add <code class="w3-codespan">*, </code>
+                                                                                        <em>before</em> the arguments:</p>
+                                                                                        <div class="w3-example">
+                                                                                            <h3>Example</h3>
+                                                                                            <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                                                                            </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(*, x):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(x)<br><br>my_function(x = <span class="pythonnumbercolor" style="color:red">3</span>) </span></div>
+                                                                                            <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_kwd_only">Try it Yourself »</a>
+                                                                                            </div>
+                                                                                            <p>Without the <code class="w3-codespan">*, </code> you are allowed to use positionale arguments even if the function
+                                                                                                expects keyword arguments:</p>
+                                                                                                <div class="w3-example">
+                                                                                                    <h3>Example</h3>
+                                                                                                    <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                                                                                    </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(x):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(x)<br><br>my_function(<span class="pythonnumbercolor" style="color:red">3</span>) </span></div>
+                                                                                                    <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_kwd_only2">Try it Yourself »</a>
+                                                                                                    </div>
+                                                                                                    <p>But when adding the <code class="w3-codespan">*, /</code> you will get an error if you try to send a 
+                                                                                                        positional argument:</p>
+                                                                                                        <div class="w3-example w3-pale-red">
+                                                                                                            <h3>Example</h3>
+                                                                                                            <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                                                                                            </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(*, x):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(x)<br><br>my_function(<span class="pythonnumbercolor" style="color:red">3</span>) </span></div>
+                                                                                                            <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_kwd_only3">Try it Yourself »</a>
+                                                                                                            </div>
+                                                                                                            <hr>
+                                                                                                            <h2>Combine Positional-Only and Keyword-Only</h2>
+                                                                                                            <p>You can combine the two argument types in the same function.</p>
+                                                                                                            <p>Any argument <em>before</em> the <code class="w3-codespan">/ ,</code> are positional-only,
+                                                                                                                and any argument <em>after</em> the <code class="w3-codespan">*, </code> are keyword-only.</p>
+                                                                                                                <div class="w3-example">
+                                                                                                                    <h3>Example</h3>
+                                                                                                                    <div class="w3-code notranslate pythonHigh"><span class="pythoncolor" style="color:black"><span class="pythonnumbercolor" style="color:red">
+                                                                                                                    </span>  <span class="pythonkeywordcolor" style="color:mediumblue">def</span> my_function(a, b, /, *, c, d):<br>&nbsp; <span class="pythonkeywordcolor" style="color:mediumblue">print</span>(a + b + c + d)<br><br><span class="pythonnumbercolor" style="color:red">
+                                                                                                                    </span>  my_function(<span class="pythonnumbercolor" style="color:red">5</span>, <span class="pythonnumbercolor" style="color:red">6</span>, c = <span class="pythonnumbercolor" style="color:red">7</span>, d = <span class="pythonnumbercolor" style="color:red">8</span>) </span></div>
+                                                                                                                    <a target="_blank" class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_function_pos_kwd">Try it Yourself »</a>
+                                                                                                                    </div>
+                                                                                                                    
+{% endblock %}

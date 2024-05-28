@@ -1,0 +1,199 @@
+{% extends 'App/nav.html' %}
+{% block content %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .main-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .sidebar {
+        width: 250px;
+        padding: 20px;
+        background-color: #000000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-right: 20px;
+    }
+    .content {
+        flex: 1;
+        max-width: 800px;
+        padding: 20px;
+        background-color: #0a0707;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+        text-align: center;
+    }
+    .color_h1 {
+        color: #007bff;
+    }
+    .w3-example {
+        background-color: #090909;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0;
+    }
+    .w3-code {
+        display: block;
+        white-space: pre-wrap;
+        font-family: monospace;
+        background-color: #333;
+        color: #f8f8f2;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .w3-pale-red {
+        background-color: #090909;
+    }
+    .w3-border-red {
+        border: 1px solid #f44336;
+    }
+    .w3-btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .w3-btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<body class="{% if is_dark_theme %}dark{% endif %}">
+    <div class="main-container">
+        <div class="sidebar">
+            <h2>Python Topics</h2>
+            <ul>
+                <li><a href="{% url 'intro' %}" onclick="change_path('/intro/')">Introduction of Python</a></li>
+                <li><a href="{% url 'syntax' %}" onclick="change_path('/syntax/')">Python Syntax</a></li>
+                <li><a href="#why-learn-python">Data Types</a></li>
+                <li><a href="#applications-of-python">Python Comments</a></li>
+                <li><a href="#applications-of-python">Python Variables</a></li>
+                <li><a href="#applications-of-python">Python if.. Else</a></li>
+                <li><a href="#applications-of-python">Python for Loop</a></li>
+                <li><a href="#applications-of-python">Python while Loop</a></li>
+                <li><a href="#applications-of-python">Python Numbers</a></li>
+                <li><a href="#applications-of-python">Python Strings</a></li>
+                <li><a href="#applications-of-python">Python Booleans</a></li>
+                <li><a href="#applications-of-python">Python Operators</a></li>
+                <li><a href="#applications-of-python">Python List</a></li>
+                <li><a href="#applications-of-python">Python Tuples</a></li>
+                <li><a href="#applications-of-python">Python Set</a></li>
+                <li><a href="#applications-of-python">Python Dictionaries</a></li>
+                <li><a href="#applications-of-python">Python Functions</a></li>
+                <li><a href="#applications-of-python">Python lambda</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Python <span class="color_h1">Syntax</span></h1>
+            <hr>
+            <div class="flex-container">
+                <div class="flex1">
+                    <a id="execute_python_syntax"></a>
+                    <h2>Execute Python Syntax</h2>
+                    <hr>
+                    <p>As we learned in the previous page, Python syntax can be executed by writing directly in the Command Line:</p>
+                    <div class="w3-example">
+                        <div class="w3-code notranslate">
+                            &gt;&gt;&gt; print("Hello, World!")<br>
+                            Hello, World!
+                        </div>
+                    </div>
+                    <p>Or by creating a python file on the server, using the .py file extension, and running it in the Command Line:</p>
+                    <div class="w3-example">
+                        <div class="w3-code notranslate">
+                            C:\Users\<em>Your Name</em>&gt;python myfile.py
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <a id="python_indentation"></a>
+            <h2>Python Indentation</h2>
+            <p>Indentation refers to the spaces at the beginning of a code line.</p>
+            <p>Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.</p>
+            <p>Python will give you an error if you skip the indentation:</p>
+            <div class="w3-example w3-pale-red">
+                <h3>Example</h3>
+                <p>Syntax Error:</p>
+                <div class="w3-code notranslate ">
+                    <span class="pythoncolor" style="color:rgb(249, 242, 242)">
+                        <span class="pythonkeywordcolor" style="color:rgb(245, 245, 248)">if</span> <span class="pythonnumbercolor" style="color:rgb(237, 232, 232)">5</span> &gt; <span class="pythonnumbercolor" style="color:rgb(238, 234, 234)">2</span>:<br>
+                        <span class="pythonkeywordcolor" style="color:rgb(235, 235, 241)">print</span>(<span class="pythonstringcolor" style="color:rgb(246, 241, 241)">"Five is greater than two!"</span>)
+                    </span>
+                </div>
+                <a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.w3schools.com/python/trypython.asp?filename=demo_indentation_test">Try it Yourself »</a>
+            </div>
+            <p>The number of spaces is up to you as a programmer, the most common use is four, but it has to be at least one.</p>
+            <div class="w3-example">
+                <h3>Example</h3>
+                <div class="w3-code notranslate">
+                    <span class="pythoncolor" style="color:rgb(245, 240, 240)">
+                        <span class="pythonkeywordcolor" style="color:rgb(236, 236, 243)">if</span> <span class="pythonnumbercolor" style="color:rgb(242, 236, 236)">5</span> &gt; <span class="pythonnumbercolor" style="color:rgb(246, 242, 242)">2</span>:<br>
+                        &nbsp;<span class="pythonkeywordcolor" style="color:rgb(235, 235, 241)">print</span>(<span class="pythonstringcolor" style="color:rgb(254, 251, 251)">"Five is greater than two!"</span>)<br>
+                        <span class="pythonkeywordcolor" style="color:rgb(245, 245, 248)">if</span> <span class="pythonnumbercolor" style="color:rgb(248, 246, 246)">5</span> &gt; <span class="pythonnumbercolor" style="color:rgb(243, 237, 237)">2</span>:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="pythonkeywordcolor" style="color:rgb(240, 240, 241)">print</span>(<span class="pythonstringcolor" style="color:rgb(242, 238, 238)">"Five is greater than two!"</span>)
+                    </span>
+                </div>
+                <a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.w3schools.com/python/trypython.asp?filename=demo_indentation2">Try it Yourself »</a>
+            </div>
+            <p>You have to use the same number of spaces in the same block of code, otherwise Python will give you an error:</p>
+            <div class="w3-example w3-pale-red">
+                <h3>Example</h3>
+                <p>Syntax Error:</p>
+                <div class="w3-code notranslate">
+                    <span class="pythoncolor" style="color:rgb(248, 246, 246)">
+                        <span class="pythonkeywordcolor" style="color:rgb(240, 240, 241)">if</span> <span class="pythonnumbercolor" style="color:rgb(248, 246, 246)">5</span> &gt; <span class="pythonnumbercolor" style="color:rgb(245, 241, 241)">2</span>:<br>
+                        &nbsp;<span class="pythonkeywordcolor" style="color:rgb(246, 246, 251)">print</span>(<span class="pythonstringcolor" style="color:rgb(232, 228, 228)">"Five is greater than two!"</span>)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="pythonkeywordcolor" style="color:rgb(243, 243, 250)">print</span>(<span class="pythonstringcolor" style="color:rgb(250, 249, 249)">"Five is greater than two!"</span>)
+                    </span>
+                </div>
+                <a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.w3schools.com/python/trypython.asp?filename=demo_indentation2_error">Try it Yourself »</a>
+            </div>
+            <hr>
+            <a id="python_variables"></a>
+            <h2>Python Variables</h2>
+            <p>In Python, variables are created when you assign a value to it:</p>
+            <div class="w3-example">
+                <h3>Example</h3>
+                <p>Variables in Python:</p>
+                <div class="w3-code notranslate">
+                    <span class="pythoncolor" style="color:rgb(255, 253, 253)">
+                        x = <span class="pythonnumbercolor" style="color:rgb(255, 246, 246)">5</span><br>
+                        y = <span class="pythonstringcolor" style="color:rgb(255, 255, 255)">"Hello, World!"</span>
+                    </span>
+                </div>
+                <a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.w3schools.com/python/trypython.asp?filename=demo_syntax_variables">Try it Yourself »</a>
+            </div>
+            <p>Python has no command for declaring a variable.</p>
+            <p>You will learn more about variables in the <a href="python_variables.asp">Python Variables</a> chapter.</p>
+            <hr>
+            <a id="python_comments"></a>
+            <h2>Comments</h2>
+            <p>Python has commenting capability for the purpose of in-code documentation.</p>
+            <div class="w3-example">
+                <h3>Example</h3>
+                <p>Comments in Python:</p>
+                <div class="w3-code notranslate">
+                    <span class="pythoncolor" style="color:rgb(241, 235, 235)">
+                        <span class="commentcolor" style="color:rgb(246, 244, 244)"># This is a comment.<br></span>
+                        <span class="pythonkeywordcolor" style="color:rgb(244, 244, 249)">print</span>(<span class="pythonstringcolor" style="color:rgb(244, 237, 237)">"Hello, World!"</span>)
+                    </span>
+                </div>
+                <a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.w3schools.com/python/trypython.asp?filename=demo_comment">Try it Yourself »</a>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

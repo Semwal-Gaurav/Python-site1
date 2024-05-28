@@ -1,0 +1,174 @@
+{% extends 'App/nav.html' %}
+{% block title %} <title>PYTHON INTRO</title>{% endblock %}
+{% block content %}
+<html>
+  <head>
+    <title>Introduction to Python</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1, h2, p {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      th, td {
+        padding: 10px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      th {
+        background-color: var(--table-header-bg);
+        color: var(--table-header-text-color);
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+      }
+
+      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+      @media (max-width: 600px) {
+        div {
+          width: 100%;
+        }
+      }
+
+      /* Dark theme */
+      body.dark {
+        --bg-color: #333333;
+        --text-color: #ffffff;
+        --border-color: #555555;
+        --table-header-bg: #000000;
+        --table-header-text-color: #ffffff;
+      }
+      .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+    }
+      .sidebar {
+        width: 25%;
+        max-width: 300px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-right: 20px;
+    }
+    </style>
+  </head>
+  <div class="main-container">
+    <div class="sidebar">
+        <h2>Python Topics</h2>
+        <ul>
+            <li><a href="{% url 'intro' %}" onclick="change_path('/intro/')">Introduction of Python</a></li>
+            <li><a href="{% url 'syntax' %}" onclick="change_path('/syntax/')">Python Syntax</a></li>
+            <li><a href="#why-learn-python">Data Types</a></li>
+            <li><a href="#applications-of-python">Python Comments</a></li>
+            <li><a href="#applications-of-python">Python Variables</a></li>
+            <li><a href="#applications-of-python">Python if.. Else</a></li>
+            <li><a href="#applications-of-python">Python for Loop</a></li>
+            <li><a href="#applications-of-python">Python while Loop</a></li>
+            <li><a href="#applications-of-python">Python Numbers</a></li>
+            <li><a href="#applications-of-python">Python Strings</a></li>
+            <li><a href="#applications-of-python">Python Booleans</a></li>
+            <li><a href="#applications-of-python">Python Operators</a></li>
+            <li><a href="#applications-of-python">Python List</a></li>
+            <li><a href="#applications-of-python">Python Tuples</a></li>
+            <li><a href="#applications-of-python">Python Set</a></li>
+            <li><a href="#applications-of-python">Python Dictionaries</a></li>
+            <li><a href="#applications-of-python">Python Functions</a></li>
+            <li><a href="#applications-of-python">Python lambda</a></li>
+        </ul>
+    </div>
+      <div style="width: 90%; max-width: 800px; padding: 20px;">
+        <h1>Welcome to Python!</h1>
+        <h2 id="what-is-python">What is Python?</h2>
+        <p>Python is a high-level, interpreted programming language that is easy to learn and understand.</p>
+        
+        <p> Python is dynamically-typed and garbage-collected programming language. It was created by Guido van Rossum during 1985- 1990. Like Perl, Python source code is also available under the GNU General Public License (GPL).</p>
+        <p>It is a versatile language that can be used for various purposes such as web development, scientific computing, data analysis, artificial intelligence, and more.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>High-Level Language</td>
+              <td>Python is a high-level programming language, which means it is designed to be easy to read and write by humans.</td>
+            </tr>
+            <tr>
+              <td>Interpreted Language</td>
+              <td>Python is an interpreted language, which means it does not need to be compiled before it can be run. This makes it easy to quickly test and debug code.</td>
+            </tr>
+            <tr>
+              <td>Dynamic Typing</td>
+              <td>Python is dynamically typed, which means you don't need to declare the data type of a variable when you create it. The data type is determined automatically based on the value you assign to the variable.</td>
+            </tr>
+            <tr>
+              <td>Large Standard Library</td>
+              <td>Python has a large standard library, which includes modules for tasks such as file I/O, networking, and data processing. This means you can often accomplish common tasks without having to install any additional packages.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="python-jobs">Python jobs</h2>
+        <p>Today, Python is very high in demand and all the major companies are looking for great Python Programmers to develop websites, software components, and applications or to work with Data Science, AI, and ML technologies. When we are developing this tutorial in 2022, there is a high shortage of Python Programmers where as market demands more number of Python Programmers due to it's application in Machine Learning, Artificial Intelligence etc.</p>
+        <ul>
+          <li>Google</li>
+          <li>Intel</li>
+          <li>NASA</li>
+          <li>PayPal</li>
+          <li>Facebook</li>
+          <li>IBM</li>
+          <li>Amazon</li>
+          <li>Netflix</li>
+          <li>Pinterest</li>
+          <li>Uber</li>
+          <li>Many more...</li>
+        </ul>
+        <h2 id="why-learn-python">Why Learn Python?</h2>
+        <p>Python is consistently rated as one of the world's most popular programming languages. Python is fairly easy to learn,  so if you are starting to learn any programming language then Python could be your great choice. Today various Schools, Colleges and Universities are teaching Python as their primary programming language. There are many other good reasons which makes Python as the top choice of any programmer:</p>
+        <ul>
+          <li><b>Python is Interpreted</b> − Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.</li>
+          <li><b>Python is Interactive</b> − You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.</li>
+          <li><b>Python is Object-Oriented</b> − Python supports Object-Oriented style or technique of programming that encapsulates code within objects.</li>
+          <li><b>Python is a Beginner's Language</b> − Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.</li>
+        </ul>
+        <h2 id="applications-of-python">Applications of Python</h2>
+        <p>The latest release of Python is 3.x. As mentioned before, Python is one of the most widely used language over the web. I'm going to list few of them here:</p>
+        <ul>
+          <li><b>Easy-to-learn</b> − Python has few keywords, simple structure, and a clearly defined syntax. This allows the student to pick up the language quickly.</li>
+          <li><b>Easy-to-read</b> − Python code is more clearly defined and visible to the eyes.</li>
+          <li><b>Easy-to-maintain</b> − Python's source code is fairly easy-to-maintain.</li>
+          <li><b>A broad standard library</b> − Python's bulk of the library is very portable and cross-platform compatible on UNIX, Windows, and Macintosh.</li>
+          <li><b>Interactive Mode</b> − Python has support for an interactive mode which allows interactive testing and debugging of snippets of code.</li>
+          <li><b>Portable</b> − Python can run on a wide variety of hardware platforms and has the same interface on all platforms.</li>
+          <li><b>Extendable</b> − You can add low-level modules to the Python interpreter. These modules enable programmers to add to or customize their tools to be more efficient.</li>
+          <li><b>Databases</b> − Python provides interfaces to all major commercial databases.</li>
+          <li><b>GUI Programming</b> − Python supports GUI applications that can be created and ported to many system calls, libraries and windows systems, such as Windows MFC, Macintosh, and the X Window system of Unix.</li>
+          <li><b>Scalable</b> − Python provides a better structure and support for large programs than shell scripting.</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}
