@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'phonenumber_field',
-    'otp',
-    'otp_twilio',
+ 
     'App',
     'channels',
    
@@ -132,11 +131,3 @@ STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-OTP_TOTP_ISSUER = 'MyApp'
-OTP_TOTP_TIMEOUT = 30
-
-TWILIO_ACCOUNT_SID = 'AC0e648a16db3c8a43d5875da81132a30a'
-TWILIO_AUTH_TOKEN = 'abe055b7eb839fb2ca41278611eb7b50'
-OTP_TWILIO_FROM_NUMBER = '09781855165'
